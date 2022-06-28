@@ -1,0 +1,9 @@
+{
+  "name": "verifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@gitcoinco/passport-sdk-verifier": "^0.1.1"
+  }
+}
