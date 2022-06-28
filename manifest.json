@@ -1,0 +1,23 @@
+{
+  "name": "GitPassport",
+  "version": "0.0.1",
+  "description": "Passport authentication system",
+  "manifest_version": 3,
+  "icons": {
+    "128": "GitcoinLogo.png",
+    "32": "GitcoinLogo.png",
+    "48": "GitcoinLogo.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "GitcoinLogo.png",
+      "32": "GitcoinLogo.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Your one identity"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ]
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitPassport</title>
+    <script src="dist/passport/reader.bundle.js"></script>
+    <!-- <script src="dist/passport/verifier/verifier.bundle.js"></script> -->
+    <script src="dist/dom/utils.js"></script>
+    <script src="dist/polyfill/buffer.js"></script>
+    <script src="dist/bulma/toast.js"></script>
+    <meta charset="utf-8">
+
+    <link rel="preload" href="dist/montserrat.ttf" as="font" crossorigin />
+    <link rel="stylesheet" href="dist/animate.css">
+    <style>
+        @font-face {
+            font-family: Montserrat;
+            src: url(./dist/montserrat.ttf);
+        }
+
+        body {
+            height: 415px;
+            width: 300px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 12px;
+            padding-top: 5px;
+            color: #333;
+        }
+
+        .head-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(230, 198, 243);
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        ::-moz-selection {
+            background: #6F3FF5;
+        }
+
+        ::selection {
+            background: #6F3FF5;
+        }
+
+        .margin-10 {
+            margin-top: 10px;
+        }
+
+        .margin-50 {
+            margin-top: 50px;
+        }
+
+        .panel.is-primary .panel-heading {
+            background-color: #6F3FF5 !important;
+        }
+
+        .is-black {
+            background-color: #6F3FF5 !important;
+        }
+
+        .is-teal {
+            background-color: #11BC92 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="dist/bulma/bulma.css">
+    <link rel="stylesheet" href="dist/bulma/pageloader.css">
+    <link rel="stylesheet" href="dist/animate.css">
+</head>
+
+<body>
+    <div id="loader" class="pageloader is-active"><span class="title">GitPassport</span></div>
+
+    <div id="setupWizard">
+        <center>
+            <div class=""></div>
+            <nav class="panel is-primary">
+                <p class="panel-heading is-unselectable"><span style="color: rgb(255, 255, 255)"
+                        class="title">GitPassport</span></p>
+            </nav>
+            <div class="margin-50"></div>
+            <div class="margin-10"></div>
+            <div class="field has-addons">
+                <p class="control is-expanded">
+                    <input id="setupWizard_read_address" class="input" type="text" placeholder="Enter passport Address">
+                </p>
+                <p class="control">
+                    <a id="setupWizard_read" class="button is-info">Enter</a>
+                </p>
+            </div>
+            <p> </p>
+            <div class="margin-50"></div>
+        </center>
+    </div>
+
+    <div id="passportScreen" style="display:none;">
+
+
+    </div>
+
+    <div id="passportScreen_options" style="display:none;">
+        <div class="margin-10"></div>
+        <center>
+            <div class="block">
+                <div id="passportScreen_Menu" style="display:none;">
+                    <div class="margin-50">
+                        <div class="margin-10">
+                            <p>
+                                Expiry Date:{" "}
+                            </p>
+                        </div>
+                        <div class="margin-10">
+                            <p> Issuance Date:{" "}
+                            </p>
+                        </div>
+                        <div class="margin-10">
+                            <p>
+                                Stamps:{" "}
+                            </p>
+                        </div>
+                        <div class="margin-50 margin-10">
+                            <input id="passportScreen_wallet_address" class="input" type="text" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="margin-10">
+
+                    </div>
+                    <button id="passportScreen_options_deletepassport" class="button is-dark">Create new
+                        passport</button>
+                </div>
+        </center>
+    </div>
+
+    <div style="border-bottom: 1px solid rgb(33, 33, 33); overflow: hidden; overflow-y: scroll; height: 265px;">
+        <center>
+            <ul id="passportScreen_balances" style="width: 88%; font-family: Montserrat;"
+                class="block-list has-radius is-dark is-small is-left"></ul>
+        </center>
+    </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
